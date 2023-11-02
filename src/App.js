@@ -1,36 +1,38 @@
-import React,{useState} from 'react'
-function body1(){
-    const[counts1,setCounts1]=useState(100);
-    const[counts2,setCounts2]=useState(100);
-    
-    function myfunc1()
-    {
-        setCounts1(counts1+1)
-    }
-    function myfunc2()
-    {
-        setCounts1(counts1-1)
-    }
-    function myfunc3()
-    {
-        setCounts2(counts2+1)
-    }
-    
+//import logo from './logo.svg';
+import './App.css';  
+import Heading from './components/Heading'
+import Footer from './components/Footer' ;
+import { useState } from 'react';
 
+function App() {
+  const [theme, setTheme] = useState('light');
 
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
+
+  const backgroundColor = theme === 'light' ? '#fff' : '#333';
+  const textColor = theme === 'light' ? '#333' : '#fff';
 
   return (
-    <div>
-    
-    <button onClick={myfunc1}>Increase</button>
-    <span>{counts1}</span>
-    <button onClick={myfunc2}>Decrease</button>
-    <span>{counts1}</span>
-    <button onMouseOver={myfunc3}>Decrease</button>
-    <span>{counts2}</span>
-    </div>
+   <>
+   <Heading />
+      <div className="spacer">
+        <div className="button-container">
+          <button
+            className="toggle-button"
+            onClick={toggleTheme}
+            style={{ backgroundColor, color: textColor }}
+          >
+            PROFILE
+          </button>
+        </div>
+        <Footer/>
+      </div>
+      
+   </>
+   
   );
-  }
+}
 
-export default body1;
-
+export default App;

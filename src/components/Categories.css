@@ -1,0 +1,12 @@
+.b
+{
+    background-image:url(./image/cake.jpg);
+    background-repeat:no-repeat ;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.a
+{
+    color:green;
+}
